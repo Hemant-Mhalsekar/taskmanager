@@ -10,7 +10,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex justify-between items-center bg-gray-900 px-4 py-3 2xl:py-4 sticky top-0 z-50 shadow-md border-l border-gray-300">
+    <div className="flex justify-between items-center bg-blue-900 px-4 py-3 2xl:py-4 sticky top-0 z-50 shadow-md border-l border-gray-300">
   
       <div className="flex items-center gap-4 w-full md:w-auto">
         <button

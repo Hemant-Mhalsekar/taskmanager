@@ -85,7 +85,7 @@ const Sidebar = () => {
         to={el.link}
         onClick={closeSidebar}
         className={clsx(
-          "w-full lg:w-3/4 flex gap-2 px-3 py-2 rounded-full items-center text-gray-300 text-base hover:bg-gray-700 transition duration-300",
+          "w-full lg:w-3/4 flex gap-2 px-3 py-2 rounded-full items-center text-gray-300 text-base hover:bg-blue-700 transition duration-300",
           path === el.link.split("/")[0] ? "bg-gradient-to-r from-green-500 to-cyan-400 text-white" : ""
         )}
       >
@@ -102,7 +102,7 @@ const Sidebar = () => {
         <p className="bg-gradient-to-r from-cyan-200 to-green-100p-2 rounded-full">
           <MdOutlineAddTask className="text-white text-2xl font-black" />
         </p>
-        <span className="text-2xl font-bold text-gray-200">T-M-S</span>
+        <span className="text-2xl font-bold text-gray-200">Zidio Task Manager</span>
       </h1>
 
       <div className="flex-1 flex flex-col gap-y-5 py-8">

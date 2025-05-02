@@ -6,12 +6,12 @@ const Calender = () => {
   const [value, setValue] = useState(new Date());
 
   return (
-    <div className="p-4 max-w-md mx-auto bg-gray-800 shadow-md rounded-lg">
+    <div className="p-4 max-w-md mx-auto bg-blue-800 shadow-md rounded-lg">
       <h2 className="text-xl font-semibold mb-4 text-center text-white">📅 TMS Calendar</h2>
       <Calendar
         onChange={setValue}
         value={value}
-        className="react-calendar dark:bg-gray-700 dark:text-white dark:tileHover:bg-indigo-600 dark:tileHover:text-white"
+        className="react-calendar dark:bg-blue-700 dark:text-white dark:tileHover:bg-indigo-600 dark:tileHover:text-white"
       />
       <p className="mt-4 text-center text-white">
         Selected Date: <strong>{value.toDateString()}</strong>
