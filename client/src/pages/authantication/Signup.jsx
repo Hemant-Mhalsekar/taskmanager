@@ -1,4 +1,3 @@
-// ... existing imports remain unchanged
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -27,13 +26,13 @@ const SignUp = () => {
 
   const password = watch("password");
   const [registerUser, { isLoading }] = useRegisterUserMutation();
+  const selectedRole = watch("role", "user");
 
-  const selectedRole = watch("role", "user"); 
   const submitHandler = async (data) => {
     try {
       const payload = {
         ...data,
-        isAdmin: selectedRole === "admin", 
+        isAdmin: selectedRole === "admin",
       };
 
       const result = await registerUser(payload).unwrap();
@@ -47,15 +46,15 @@ const SignUp = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0d0d2b] to-[#130f40] p-4">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a0a3c] to-[#1a1a5e] p-4">
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center shadow-xl backdrop-blur-lg bg-white/10 rounded-xl p-6 sm:p-8 border border-white/20">
         {/* Left panel */}
         <div className="hidden md:flex flex-col items-center text-center text-white w-1/2 p-4">
           <p className="text-sm sm:text-lg border border-gray-300 rounded-full px-3 py-1">
             Join us & manage tasks effortlessly!
           </p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold mt-4 bg-gradient-to-r from-green-400 to-cyan-500 text-transparent bg-clip-text">
-            Task Manager
+          <h1 className="text-3xl sm:text-5xl font-extrabold mt-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
+            Zidio Task Manager
           </h1>
         </div>
 
@@ -75,6 +74,7 @@ const SignUp = () => {
               type="text"
               name="name"
               label="Full Name"
+              labelClassName="text-white"
               className="w-full rounded-lg text-white"
               register={register("name", {
                 required: "Full name is required!",
@@ -88,6 +88,7 @@ const SignUp = () => {
               type="email"
               name="email"
               label="Email Address"
+              labelClassName="text-blue-300"
               className="w-full rounded-lg text-white"
               register={register("email", { required: "Email is required!" })}
               error={errors.email?.message}
@@ -101,6 +102,7 @@ const SignUp = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 label="Password"
+                labelClassName="text-white"
                 className="w-full rounded-lg text-white"
                 register={register("password", {
                   required: "Password is required!",
@@ -133,6 +135,7 @@ const SignUp = () => {
                 type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
                 label="Confirm Password"
+                labelClassName="text-blue-300"
                 className="w-full rounded-lg text-white"
                 register={register("confirmPassword", {
                   required: "Please confirm your password",
@@ -145,7 +148,9 @@ const SignUp = () => {
               <button
                 type="button"
                 className="absolute right-3 top-10 text-gray-400 hover:text-white"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                onClick={() =>
+                  setShowConfirmPassword(!showConfirmPassword)
+                }
               >
                 {showConfirmPassword ? (
                   <IoEyeOffOutline size={20} />
@@ -196,11 +201,11 @@ const SignUp = () => {
                 {...register("terms", {
                   required: "You must accept the terms!",
                 })}
-                className="w-4 h-4 accent-green-400 cursor-pointer"
+                className="w-4 h-4 accent-blue-400 cursor-pointer"
               />
               <label htmlFor="terms">
                 I agree to the{" "}
-                <a href="/terms" className="text-cyan-300 hover:underline">
+                <a href="/terms" className="text-blue-300 hover:underline">
                   Terms & Conditions
                 </a>
               </label>
@@ -216,13 +221,13 @@ const SignUp = () => {
               <Button
                 type="submit"
                 label="Sign Up"
-                className="w-full py-2 bg-gradient-to-r from-green-500 to-cyan-400 text-black uppercase rounded-lg hover:shadow-lg transition duration-300"
+                className="w-full py-2 bg-gradient-to-r from-blue-500 to-blue-400 text-white uppercase rounded-lg hover:shadow-lg transition duration-300"
               />
             )}
 
             <div className="text-center text-white text-xl mt-4">
               Already have an account?{" "}
-              <a href="/login" className="text-cyan-300 hover:underline">
+              <a href="/login" className="text-blue-300 hover:underline">
                 Log in
               </a>
             </div>

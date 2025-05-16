@@ -59,8 +59,6 @@ const AddTask = ({ open, setOpen, task }) => {
   const existingAssets = task?.assets ? [...task.assets] : [];
 
   const submitHandler = async (data) => {
-    console.log("Form Data:", data);
-
     for (const file of assets) {
       setUploading(true);
       try {
@@ -129,7 +127,7 @@ const AddTask = ({ open, setOpen, task }) => {
       <form onSubmit={handleSubmit(submitHandler)}>
         <Dialog.Title
           as="h2"
-          className="text-base font-bold leading-6 text-gray-900 mb-4"
+          className="text-base font-bold leading-6 text-blue-900 mb-4"
         >
           {task ? "UPDATE TASK" : "ADD TASK"}
         </Dialog.Title>
@@ -140,7 +138,7 @@ const AddTask = ({ open, setOpen, task }) => {
             type="text"
             name="title"
             label="Task Title"
-            className="w-full rounded"
+            className="w-full rounded border border-blue-200 focus:ring-2 focus:ring-blue-500"
             register={register("title", { required: "Title is required" })}
             error={errors.title ? errors.title.message : ""}
           />
@@ -161,14 +159,14 @@ const AddTask = ({ open, setOpen, task }) => {
                 type="date"
                 name="date"
                 label="Task Date"
-                className="w-full rounded"
+                className="w-full rounded border border-blue-200 focus:ring-2 focus:ring-blue-500"
                 register={register("date", { required: "Date is required!" })}
                 error={errors.date ? errors.date.message : ""}
               />
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <SelectList
               label="Priority Level"
               lists={PRIORITY}
@@ -176,9 +174,9 @@ const AddTask = ({ open, setOpen, task }) => {
               setSelected={setPriority}
             />
 
-            <div className="w-full flex items-center justify-center mt-4">
+            <div className="flex items-center justify-center mt-4">
               <label
-                className="flex items-center gap-1 text-base text-ascent-2 hover:text-ascent-1 cursor-pointer my-4"
+                className="flex items-center gap-1 text-base text-blue-600 hover:text-blue-800 cursor-pointer my-4"
                 htmlFor="imgUpload"
               >
                 <input
@@ -189,7 +187,7 @@ const AddTask = ({ open, setOpen, task }) => {
                   accept=".jpg, .png, .jpeg"
                   multiple
                 />
-                <BiImages />
+                <BiImages size={20} />
                 <span>Add Assets</span>
               </label>
             </div>
@@ -197,20 +195,18 @@ const AddTask = ({ open, setOpen, task }) => {
 
           <div className="bg-gray-50 py-6 sm:flex sm:flex-row-reverse gap-4">
             {uploading ? (
-              <span className="text-sm py-2 text-red-500">
-                Uploading assets...
-              </span>
+              <span className="text-sm py-2 text-red-500">Uploading assets...</span>
             ) : (
               <Button
                 label="Submit"
                 type="submit"
-                className="bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700 sm:w-auto"
+                className="bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700 sm:w-auto rounded shadow"
               />
             )}
 
             <Button
               type="button"
-              className="bg-white px-5 text-sm font-semibold text-gray-900 sm:w-auto"
+              className="bg-white border border-blue-300 px-5 text-sm font-semibold text-blue-700 hover:bg-blue-50 sm:w-auto rounded shadow"
               onClick={() => setOpen(false)}
               label="Cancel"
             />

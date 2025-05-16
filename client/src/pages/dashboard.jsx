@@ -26,7 +26,7 @@ const TaskTable = ({ tasks }) => {
   };
 
   return (
-    <div className='w-full md:w-2/3 bg-blue-800 px-2 md:px-4 pt-4 pb-4 shadow-md rounded'>
+    <div className='w-full md:w-2/3 bg-gray-800 px-2 md:px-4 pt-4 pb-4 shadow-md rounded'>
       <table className='w-full'>
         <thead className='border-b border-gray-700'>
           <tr className='text-white text-left'>
@@ -101,13 +101,13 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className='h-full py-4 bg-blue-900'>
+    <div className='h-full py-4 bg-gray-900'>
       {/* responsive stats grid  */}
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'>
         {stats.map(({ icon, bg, label, total }, index) => (
           <div
             key={index}
-            className='w-full h-32 bg-blue-800 p-5 shadow-md rounded-md flex items-center justify-between'
+            className='w-full h-32 bg-gray-800 p-5 shadow-md rounded-md flex items-center justify-between'
           >
             <div className='h-full flex flex-1 flex-col justify-between'>
               <p className='text-base text-gray-300'>{label}</p>
@@ -120,8 +120,6 @@ const Dashboard = () => {
           </div>
         ))}
       </div>
-
-      {/* Fixed Width Chart */}
 
     </div>
   );
