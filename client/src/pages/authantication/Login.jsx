@@ -59,7 +59,7 @@ const Login = () => {
   }, [userInfo, navigate]);
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0d0d2b] to-[#130f40] p-4">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a0a2b] to-[#1e3a8a] p-4">
       <div className="w-full max-w-4xl flex flex-col md:flex-row items-center justify-center shadow-xl backdrop-blur-lg bg-white/10 rounded-xl p-6 sm:p-8 border border-white/20">
 
         {/* Left side info */}
@@ -67,8 +67,8 @@ const Login = () => {
           <p className="text-sm sm:text-lg border border-gray-300 rounded-full px-3 py-1">
             Organize your tasks effortlessly!
           </p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold mt-4 bg-gradient-to-r from-green-400 to-cyan-500 text-transparent bg-clip-text">
-            Task Manager
+          <h1 className="text-3xl sm:text-5xl font-extrabold mt-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
+            Zidio Task Manager  
           </h1>
         </div>
 
@@ -112,7 +112,7 @@ const Login = () => {
             </div>
 
             <div className="flex justify-between items-center text-xs sm:text-sm text-gray-400">
-              <Link to="/forgot-password" className="hover:text-green-400">Forgot Password?</Link>
+              <Link to="/forgot-password" className="hover:text-blue-300">Forgot Password?</Link>
             </div>
 
             {/* Submit Button or Loader */}
@@ -120,13 +120,13 @@ const Login = () => {
               <Button
                 type="submit"
                 label="Sign In"
-                className="w-full py-2 bg-gradient-to-r from-green-500 to-cyan-400 text-black uppercase rounded-lg hover:shadow-lg transition duration-300"
+                className="w-full py-2 bg-gradient-to-r from-blue-500 to-blue-400 text-black uppercase rounded-lg hover:shadow-lg transition duration-300"
               />
             )}
 
             <div className="flex items-center text-center flex-col text-white">
               <p className="text-xl">Create an account</p>
-              <Link to="/signup" className="text-cyan-300 pt-1 text-xl underline">Sign Up</Link>
+              <Link to="/signup" className="text-blue-300 pt-1 text-xl underline">Sign Up</Link>
             </div>
           </form>
         </div>
